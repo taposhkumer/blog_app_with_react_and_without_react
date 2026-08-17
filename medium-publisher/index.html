@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mini Medium — Block Editor (Vanilla)</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="title">
+        <h1>Mini Medium — Block Editor</h1>
+        <p class="muted">Vanilla JS, Web Components, central Store, localStorage persistence</p>
+      </div>
+
+      <div class="metrics" id="metrics" aria-live="polite"></div>
+    </header>
+
+    <main class="main-grid">
+      <section class="editor">
+        <div class="editor-controls">
+          <div class="row">
+            <label for="new-block-type">Add Block</label>
+            <select id="new-block-type">
+              <option value="paragraph">Paragraph</option>
+              <option value="image">Image (URL / upload)</option>
+              <option value="video">Video (URL / upload)</option>
+            </select>
+            <button id="add-block-btn">Add</button>
+          </div>
+
+          <div class="row">
+            <label for="search-input">Search Blocks</label>
+            <input id="search-input" placeholder="Filter draft blocks (live)" />
+          </div>
+
+          <div class="row publish-row">
+            <input id="publish-title" placeholder="Article title..." />
+            <button id="publish-btn">Publish Article</button>
+          </div>
+        </div>
+
+        <div class="draft-area">
+          <h2>Draft Blocks</h2>
+          <div id="draft-list" class="draft-list" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <h2>Published Stories</h2>
+        <div id="published-list" class="published-list"></div>
+      </aside>
+    </main>
+  </div>
+
+  <!-- App entry (module) -->
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
